@@ -24,7 +24,7 @@ app.get('/message', function(req, res) { res.send ( { mes:"message" } ) } );
 app.get('/data', function(req, res){
   res.send(data);
 });
-const url = "http://localhost:5001"
+const url = "http://45.141.78.58:80"
 
 app.get('*', function(req, res){
   res.redirect(url)
