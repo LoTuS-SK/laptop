@@ -12,7 +12,7 @@ const data = require("./base/data")
 const app = express()
 //const upload = require("./controlers/multer")
 
-const port = process.env.PORT || 5002
+const port = process.env.PORT
 app.use(express.json())
 app.use(cookieparser())
 app.use(cors())
@@ -24,10 +24,10 @@ app.get('/message', function(req, res) { res.send ( { mes:"message" } ) } );
 app.get('/data', function(req, res){
   res.send(data);
 });
-
+const url = "http://localhost:5001"
 
 app.get('*', function(req, res){
-  res.redirect("http://localhost:5001")
+  res.redirect(url)
 });
 
 
